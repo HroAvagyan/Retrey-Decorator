@@ -7,7 +7,7 @@ def retry(Exceptions, tries,delay,backoff):
 
     def decorator(func):
 
-
+        @wraps(func)
         def wrapper(*args, **kwargs):
             nonlocal delay
             for i in range(1,tries+1):
